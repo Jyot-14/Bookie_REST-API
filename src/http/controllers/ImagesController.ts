@@ -1,0 +1,34 @@
+import { NextFunction, Request, Response } from 'express';
+import { ResponseUtil } from '../../utils/Response';
+import path from 'path';
+import fs from 'fs';
+
+export class ImagesController {
+  async get(req: Request, res: Response, next: NextFunction) {
+    const { type, id } = req.params;
+    const imagesTypes = ['authors', 'books'];
+    if (!imagesTypes.includes(type)) {
+      return ResponseUtil.sendError(res, 'Invalid image type', 500, null);
+    }
+
+    let filePath = path.join(__dirname, '../../../', 'uploads', type, id);
+    console.log(filePath);
+
+    if (!fs.existsSync(filePath)) {
+      return ResponseUtil.sendError(res, 'Invalid image', 404, null);
+    }
+
+    fs.readFile(filePath, (err, data) => {
+      if (err) {
+        return ResponseUtil.sendError(
+          res,
+          'Invalid image / image read error',
+          404,
+          null
+        );
+      }
+      res.set('Content-Type', 'image/jpeg');
+      res.send(data);
+    });
+  }
+}
