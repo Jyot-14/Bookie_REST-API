@@ -6,7 +6,6 @@ import {
   registerDecorator,
 } from 'class-validator';
 import { AppDataSource } from '../../database/data-source';
-import { count } from 'console';
 import { Not } from 'typeorm';
 
 @ValidatorConstraint({ async: true })
