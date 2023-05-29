@@ -9,7 +9,7 @@ import { ImageUtil } from '../../utils/ImageUtil';
 
 export class BooksController {
   async get(req: Request, res: Response) {
-    const builder = await AppDataSource.getRepository(Book)
+    const builder = AppDataSource.getRepository(Book)
       .createQueryBuilder('book')
       .leftJoinAndSelect('book.author', 'author')
       .orderBy('book.id', 'DESC');
