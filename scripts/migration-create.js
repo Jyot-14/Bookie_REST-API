@@ -1,14 +1,14 @@
 #! /user/bin/env node
 
-const yargs = require('yargs');
+import { argv } from 'yargs';
 
-const { execSync } = require('child_process');
+import { execSync } from 'child_process';
 
 // Parse the command-line arguments
 const {
   _: [name],
   path,
-} = yargs.argv;
+} = argv;
 
 // Construct the migration path
 const migrationPath = `src/database/migrations/${name}`;
