@@ -12,7 +12,7 @@ export const AppDataSource = new DataSource({
   port: Number(process.env.DB_PORT) || 3306,
   username: process.env.DB_USERNAME || 'user',
   password: process.env.DB_PASSWORD || 'Jyot@1401',
-  database: process.env.DB_DATABASE || 'bookie',
+  database: process.env.DB_DATABASE || 'bookie_ts',
   logging: ['query'],
   synchronize: false,
   entities: [Author, Book, User],
