@@ -1,9 +1,9 @@
 import express from 'express';
-import { AuthorsController } from '@/http/controllers/AuthorsController';
-import { ErrorHandler } from '@http/middlewares/ErrorHandler';
-import { FileUploader } from '@http/middlewares/FileUploader';
-import { AuthMiddleware } from '@http/middlewares/AuthMiddleware';
-import { AdminMiddleware } from '@http/middlewares/AdminMiddleware';
+import { AuthorsController } from '..//http/controllers/AuthorsController';
+import { ErrorHandler } from '../http/middlewares/ErrorHandler';
+import { FileUploader } from '../http/middlewares/FileUploader';
+import { AuthMiddleware } from '../http/middlewares/AuthMiddleware';
+import { AdminMiddleware } from '../http/middlewares/AdminMiddleware';
 
 const authorsController = new AuthorsController();
 

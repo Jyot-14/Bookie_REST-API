@@ -1,8 +1,11 @@
-import { AppDataSource } from '@/database/data-source';
-import { Author } from '@/database/entities/Author';
-import { Paginator } from '@/database/Paginator';
-import { ResponseUtil } from '@/utils/Response';
-import { CreateAuthorDTO, UpdateAuthorDTO } from '@http/dtos/CreateAuthorDTO';
+import { AppDataSource } from '../../database/data-source';
+import { Author } from '../../database/entities/Author';
+import { Paginator } from '../../database/Paginator';
+import { ResponseUtil } from '../../utils/Response';
+import {
+  CreateAuthorDTO,
+  UpdateAuthorDTO,
+} from '../../http/dtos/CreateAuthorDTO';
 import { validateOrReject } from 'class-validator';
 import { Request, Response } from 'express';
 
